@@ -1,12 +1,14 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+// const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
     plugins: [
       new HtmlWebpackPlugin({
         template: path.resolve(__dirname, './index.html'), // шаблон
-        filename: 'index.html', // название выходного файла
+        // filename: 'index.html', // название выходного файла
       }),
+      // new CleanWebpackPlugin(),
     ],
     entry: {
       index: './index.js',
@@ -20,7 +22,7 @@ module.exports = {
       contentBase: path.resolve(__dirname, 'dist'),
       publicPath: '/',
       compress: true,
-      port: 9001,
+      port: 8083,
       host: 'localhost'
     },
 }
