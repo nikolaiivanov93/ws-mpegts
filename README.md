@@ -21,3 +21,10 @@ npm run dev
 ```
 npm run build
 ```
+
+## WebSocket
+
+Перед запуском поменять в файле ___'./index.js'___  __url__
+```
+url: 'ws://[path]'
+```
