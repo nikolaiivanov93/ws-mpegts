@@ -1,6 +1,9 @@
 # mpegts Player
 
-## Запуск проекта локально
+Плеер, работающий на технологии __Websocket+MSE__. Воспроизводит __LIVE__ поток __mpegts__ видео.
+Плеер создан на основании стороннего открытого продукта https://github.com/xqq/mpegts.js
+
+## Local launch 
 
 Клонируем репозиотрий
 ```
@@ -17,7 +20,7 @@ npm install
 npm run dev
 ```
 
-## Сборка
+## Build
 ```
 npm run build
 ```
