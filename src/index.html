@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type"text/css" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <video class="videoElem" id="videoElement" width="auto" height="700px" autoplay controls></video>
+            <div class="buttons">
+                <button class="btn__pause btn">Pause</button>
+                <button class="btn__resume btn">Start</button>
+                <button class="btn__event-metric btn">eventMetric</button>
+                <button class="btn__error-types btn">errorTypes</button>
+                <button class="btn__error-details btn">errorDetails</button>
+            </div>
+            <div class="event">
+                <div class="event__title title">Event</div>
+                <div class="metric"></div>
+            </div>
+            <div class="errorTypes">
+                <div class="errorTypes__title title">ErrorTypes</div>
+                <div class="errorTypes-metric"></div>
+            </div>
+            <div class="errorDetails">
+                <div class="errorDetails__title title">ErrorDetails</div>
+                <div class="errorDetails-metric"></div>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

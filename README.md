@@ -4,7 +4,7 @@
 
 Клонируем репозиотрий
 ```
-git clone
+git clone git@gitlab.video.htz.atmo.video:video/cdn/research-and-development-group/player-ws-mpegts.git
 ```
 
 Устанавливаем необходимые npm пакеты
@@ -12,7 +12,7 @@ git clone
 npm install
 ```
 
-Запускаем проект на порту :8083
+Запускаем проект локально на порту :8083
 ```
 npm run dev
 ```
@@ -24,7 +24,8 @@ npm run build
 
 ## WebSocket
 
-Перед запуском поменять в файле ___'./index.js'___  __url__
+На данном этапе url __Websocket__ записывается напрямую в файле __index.js__
+При необходимости перед сборкой поменять
 ```
 url: 'ws://[path]'
 ```
