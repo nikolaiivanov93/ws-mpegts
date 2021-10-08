@@ -7,30 +7,30 @@ if (mpegts.getFeatureList().mseLivePlayback) {
     let player = mpegts.createPlayer({
         type: 'mse',  // could also be mpegts, m2ts, flv
         isLive: true,
-        url: 'wss://stage.cloud.atmosfera.cam/ws-mse/mr-rust-test/'
+        url: 'wss://stage.cloud.atmosfera.cam/ws-mse/mr-rust-main/'
     });
     player.attachMediaElement(videoElement);
     player.load();
     player.play();
-
-    setTimeout(() => {
-    let quality = '720p';
-    player.onWebSocketSe(quality);
-    }, 50);
 
     let featureList = mpegts.getFeatureList();
     console.log('getFeatureList()',featureList);
 
     let lggingControl = mpegts.LoggingControl;
     console.log('lggingControl',lggingControl);
+
+    player.muted = true;
+    // console.log("MUTED",player.muted);
     
-    const wrapp = document.querySelector('.wrapper');
+    // const mutedBtn = docuement.querySelector('.btn__muted');
+    // const wrapp = document.querySelector('.wrapper');
     const pauseBtn = document.querySelector('.btn__pause');
     const resumeBtn = document.querySelector('.btn__resume');
     const eventBtn = document.querySelector('.btn__event-metric');
     const errorTypeBtn = document.querySelector('.btn__error-types');
     const errorDetailBtn = document.querySelector('.btn__error-details');
-    const button = document.querySelectorAll('.btn');
+    
+    // const button = document.querySelectorAll('.btn');
     let showInfoEvent = false;
     let showInfoErrorType = false;
     let showInfoErrorDetails = false;
@@ -42,6 +42,11 @@ if (mpegts.getFeatureList().mseLivePlayback) {
     resumeBtn.addEventListener('click', () => {
         player.play();
     });
+
+    // mutedBtn.addEventListener('click', () => {
+    //     player.muted = false;
+    //     console.log('MUT', player.muted);
+    // });
 
     function showMetric(btn, item, info, func) {
 
@@ -165,13 +170,21 @@ if (mpegts.getFeatureList().mseLivePlayback) {
 
     
     // console.log(player.Events);
-    // const ws = new WebSocket('ws://127.0.0.1:8082');
+    // const ws = new WebSocket('wss://stage.cloud.atmosfera.cam/ws-mse/mr-rust-test/');
     // ws.addEventListener('open', function(e) {
     //     // setTimeout(() => {
-    //         let quality = '720p';
+            // let quality = '720p';
     //         ws.send(JSON.stringify({ quality }));
     //     // }, 5000);
     // });
-    // console.log(player.url);
+    let ping = 'PING';
+    setTimeout(() => {
+        setInterval(() => {
+        
+            player.onWebsSend(ping);
+        }, 2000);
+    }, 2000);
+    // console.log(p);
+    // console.log('WEBSOCKET',player.WebSocketLoader());
 
 }
