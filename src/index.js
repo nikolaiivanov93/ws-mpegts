@@ -193,13 +193,13 @@ if (mpegts.getFeatureList().mseLivePlayback) {
     //     // }, 5000);
     // });
 
-    let ping = 'PING';
-    setTimeout(() => {
-        setInterval(() => {
+    // let ping = 'PING';
+    // setTimeout(() => {
+    //     setInterval(() => {
         
-            player.onWebsSend(ping);
-        }, 2000);
-    }, 2000);
+    //         player.onWebsSend(ping);
+    //     }, 2000);
+    // }, 2000);
     // console.log(p);
     // console.log('WEBSOCKET',player.WebSocketLoader());
 
