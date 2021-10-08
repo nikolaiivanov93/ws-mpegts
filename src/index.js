@@ -31,11 +31,24 @@ if (mpegts.getFeatureList().mseLivePlayback) {
     const eventBtn = document.querySelector('.btn__event-metric');
     const errorTypeBtn = document.querySelector('.btn__error-types');
     const errorDetailBtn = document.querySelector('.btn__error-details');
+    const btnQuality = document.querySelectorAll('.btn__quality');
     
     // const button = document.querySelectorAll('.btn');
     let showInfoEvent = false;
     let showInfoErrorType = false;
     let showInfoErrorDetails = false;
+
+    // btnQuality.addEventListener('click', () => {
+    //     let resolution = 360;
+    //     player.onWebsSend(resolution);
+    // });
+    btnQuality.forEach(item => {
+        item.addEventListener('click', () => {
+            // console.log(item.innerHTML);
+            let resolution = item.innerHTML;
+            player.onWebsSend(resolution);
+        });
+    });
 
     pauseBtn.addEventListener('click', () => {
         player.pause();
