@@ -13,6 +13,8 @@ if (mpegts.getFeatureList().mseLivePlayback) {
     player.load();
     player.play();
 
+    // console.log(player.open());
+
     let featureList = mpegts.getFeatureList();
     console.log('getFeatureList()',featureList);
 
@@ -177,6 +179,7 @@ if (mpegts.getFeatureList().mseLivePlayback) {
     //         ws.send(JSON.stringify({ quality }));
     //     // }, 5000);
     // });
+
     let ping = 'PING';
     setTimeout(() => {
         setInterval(() => {
