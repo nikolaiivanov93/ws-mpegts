@@ -47,6 +47,13 @@ if (mpegts.getFeatureList().mseLivePlayback) {
             // console.log(item.innerHTML);
             let resolution = item.innerHTML;
             player.onWebsSend(resolution);
+            // let videoElem = document.createElement('video');
+            // let wrapp = document.querySelector('.wrapper');
+            // wrapp.appendChild(videoElem);
+            // player.detachMediaElement();
+            // player.attachMediaElement(videoElement);
+            // player.load();
+            // player.play();
         });
     });
 

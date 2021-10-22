@@ -3,7 +3,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin');
 
 const conf = [{
-  module: {},
+  module: {
+    // rules: [
+    //   {
+    //     test: /\.js$/,
+    //     enforce: "pre",
+    //     use: ["source-map-loader"],
+    //   },
+    // ],
+  },
   plugins: [
     new HtmlWebpackPlugin({
       minify: false,
@@ -26,9 +34,9 @@ const conf = [{
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: '[name].js',
+    filename: 'index.min.js',
   },
-  // devtool: 'source-map',
+  devtool: 'source-map',
   devServer: {
     overlay: true,
     contentBase: path.resolve(__dirname, './dist'),
